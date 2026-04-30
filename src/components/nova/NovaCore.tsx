@@ -12,12 +12,15 @@ export default function NovaCore({
     state?: "idle" | "thinking" | "speaking";
 }) {
     // 🎨 Mode Colors (identity tiap mode)
-    const modeColor = {
-        CLARITY: "#60a5fa",     // blue
-        STRATEGY: "#a78bfa",    // purple
-        REFLECTION: "#34d399",  // green
-        ACTION: "#f59e0b",      // orange
-    }[mode as keyof typeof modeColor] || "#ffffff";
+    const modeColorMap = {
+        CLARITY: "#60a5fa",
+        STRATEGY: "#a78bfa",
+        REFLECTION: "#34d399",
+        ACTION: "#f59e0b",
+    } as const;
+
+    const modeColor =
+        modeColorMap[mode as keyof typeof modeColorMap] || "#ffffff";
 
     // ⚡ State Behavior
     const stateAnim = {
