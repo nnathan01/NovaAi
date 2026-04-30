@@ -146,7 +146,11 @@ export default function ChatPage() {
             <div className="p-5 flex justify-between items-center border-b border-white/5 backdrop-blur">
 
                 <div className="flex items-center gap-3">
-                    <NovaCore size={40} thinking={isTypingAI} mode={activeMode} />
+                    <NovaCore
+                        size={40}
+                        state={isTypingAI ? "thinking" : "idle"}
+                        mode={activeMode}
+                    />
                     <div>
                         <h1 className="font-semibold tracking-tight">Nova</h1>
                         <p className="text-xs text-gray-400">
@@ -170,8 +174,8 @@ export default function ChatPage() {
                         key={m}
                         onClick={() => setActiveMode(m)}
                         className={`px-3 py-1 text-xs rounded-full border transition ${activeMode === m
-                                ? "bg-white text-black"
-                                : "border-gray-700 text-gray-400"
+                            ? "bg-white text-black"
+                            : "border-gray-700 text-gray-400"
                             }`}
                     >
                         {m}
