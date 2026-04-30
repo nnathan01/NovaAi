@@ -248,7 +248,7 @@ export default function ChatPage() {
 
                 {loading && (
                     <div className="flex items-center gap-2 text-gray-400 text-sm">
-                        <NovaCore size={18} thinking={true} mode={activeMode} />
+                        <NovaCore size={18} state="thinking" mode={activeMode} />
                         Nova is thinking...
                     </div>
                 )}
