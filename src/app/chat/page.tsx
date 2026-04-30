@@ -213,7 +213,7 @@ export default function ChatPage() {
 
                                 <NovaCore
                                     size={26}
-                                    thinking={isTypingAI}
+                                    state={isTypingAI ? "thinking" : "speaking"}
                                     mode={activeMode}
                                 />
 
