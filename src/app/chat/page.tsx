@@ -188,7 +188,7 @@ export default function ChatPage() {
 
                 {messages.length === 0 && (
                     <div className="text-center text-gray-500 mt-20">
-                        <NovaCore size={60} thinking={false} mode={activeMode} />
+                        <NovaCore size={60} state="idle" mode={activeMode} />
                         <p className="mt-4 text-sm">
                             Start thinking with Nova
                         </p>
